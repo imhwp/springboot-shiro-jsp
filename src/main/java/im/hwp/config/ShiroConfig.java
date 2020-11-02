@@ -24,6 +24,7 @@ public class ShiroConfig {
         //3. 配置系统公共资源和系统受限资源
         Map<String,String> map = new HashMap<String,String>();
         map.put("/user/login","anon");
+        map.put("/user/getImage","anon");
         map.put("/login.jsp","anon");
         map.put("/user/register","anon");
         map.put("/register.jsp","anon");
@@ -49,7 +50,7 @@ public class ShiroConfig {
         CustomerRealm customerRealm = new CustomerRealm();
         customerRealm.setCredentialsMatcher(hashedCredentialsMatcher);
         //设置缓存管理器
-//        customerRealm.setCacheManager(new EhCacheManager());
+        customerRealm.setCacheManager(new EhCacheManager());
         customerRealm.setCacheManager(new RedisCacheManager());
         //开启缓存管理
         customerRealm.setCachingEnabled(true);

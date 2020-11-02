@@ -49,7 +49,6 @@ public class CustomerRealm extends AuthorizingRealm {
             //封装信息有 用户名 密码 随机盐 和 当前对象
             return new SimpleAuthenticationInfo(user.getUsername(),user.getPassword(), MyByteSource.Util.bytes(user.getSalt()),this.getName());
         }
-
         return null;
     }
 }

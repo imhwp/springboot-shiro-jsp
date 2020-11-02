@@ -10,14 +10,7 @@ import java.io.InputStream;
 import java.io.Serializable;
 import java.util.Arrays;
 
-/**
- * @author ： Donald
- * @date ： 2020/10/18 17:41
- * @description： 自定义salt的实现 主要巍峨salt的序列化
- */
 public class MyByteSource implements ByteSource, Serializable {
-
-
 
     /*这里将final去掉了,去掉后要在后面用getter和setter赋、取值*/
     private byte[] bytes;
